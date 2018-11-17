@@ -1,0 +1,10 @@
+print("\tMÉTODO POP EM LISTAS PYTHON")
+print()
+print("Lista com .sort()")
+avioes_operacao = ["Mirage 2000", "Dassault Rafale", "F-16", "F-22", "F-15", "Su-27", "Su-30", "Su-34"]
+avioes_operacao.sort()
+print(avioes_operacao)
+avioes_operacao.sort(reverse=True)
+print()
+print("Lista com .sorted()")
+print(avioes_operacao)

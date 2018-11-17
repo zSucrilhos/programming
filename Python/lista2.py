@@ -1,0 +1,11 @@
+print()
+lista_remove = ["item 1", "item 2", "item 3", "item 4", "item 5", "item 6", "item 7", "item 8", "item 9", "item 10", "item 11", "item 12", "item 13", "item 14", "item 15"]
+print("lista_remove: " + lista_remove)
+print()
+print("Usando o método '.remove()' para remover um item de uma lista apenas pelo nome do mesmo.")
+item_to_remove = input("Digite o nome do item que deseja remover: ")
+print()
+print("Executando 'lista_remove.remove(item_to_remove)' agora.")
+lista_remove.remove(item_to_remove)
+print("'%s' removido com sucesso!" %(item_to_remove.title()))
+print(lista_remove)

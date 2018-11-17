@@ -1,0 +1,7 @@
+tabela = ('Flamengo','São Paulo','Atlético-MG','Grêmio','Internacional','Cruzeiro','Palmeiras','Corinthians','Fluminense','Botafogo','Vasco','Sport','Vitória','América-MG','Santos','Bahia','Chapecoense','Paraná','Ceará','Atlético-PR')
+print(f'A tabela do Brasileirão Séria A 2018 por ordem de colocação: ', end="")
+print(*tabela, sep=', ')
+print(f'\nOs 5 primeiros colocados foram: {tabela[:4]}')
+print(f'\nOs 4 últimos colocados foram: {tabela[-4:]}')
+print(f'\nOs colocados por ordem alfabética: {sorted(tabela)}')
+print(f'\nA posição do Chapecoense na lista: {tabela.index("Chapecoense")}')

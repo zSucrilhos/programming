@@ -1,0 +1,17 @@
+[
+	{ "keys": ["ctrl+alt+n"], "command": "repl_open",
+		"caption": "Python - RUN current file",
+		"id": "repl_python_run",
+		"mnemonic": "d",
+		"args":{
+			"type": "subprocess",
+			"encoding": "utf-8",
+			"cmd": ["python", "-u", "$file_basename"],
+			"cwd": "$file_path",
+			"syntax": "Packages/Python/Python.tmlanguage",
+			"external_id": "python",
+			"extend_env": {"PYTHONIOENCODING": "utf-8"}
+		}
+
+	}
+]

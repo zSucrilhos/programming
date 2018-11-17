@@ -1,0 +1,285 @@
+<html>
+	<head>
+		<title>
+			Python Reference
+		</title>
+		<style>
+			* {
+				font-family: Tahoma;
+				letter-spacing: 1px;
+				background-color: rgb(11, 16, 21);
+			}
+
+			
+			h1 {
+				font-weight: bolder;
+				text-align: center;
+				color: rgb(215, 71, 48);
+			}
+
+			h2 {
+				font-weight: bolder;
+				text-align: center;
+				color: rgb(253, 216, 53);
+			}
+			
+
+			ul {
+				line-height: 25px;
+				font-family: ./FiraCode-Regular_0.ttf;
+			}
+
+			li {
+				color: rgb(43, 186, 197);
+			}
+
+			hr {
+				width: auto;
+				color: rgb(253, 216, 53);			
+			}
+
+			small {
+				color: rgb(255, 255, 255);
+			}
+
+			p {
+				color: rgb(255, 255, 255);
+			}
+
+			h3 {
+				text-align: center;
+				color: rgb(255, 255, 255);
+			}
+
+		</style>
+
+	</head>
+	<body>
+
+		<h1>GUIA DE REFERÊNCIA Python</h1>
+		<center><small>by Erick César</small></center>
+		<hr>
+		<h2>Operadores Aritiméticos</h2>
+		<ul>
+			<!--soma-->
+			<li><b>+</b> <small>-- soma</small></li>
+			<!----->
+			<li><b>-</b> <small>-- subtração</small></li>
+			<!--/-->
+			<li><b>/</b> <small>-- divisão</small></li>
+			<!--*-->
+			<li><b>*</b> <small>-- multiplicação</small></li>
+			<!--**-->
+			<li><b>**</b> <small>-- potência e.g. <i>'3**3 = 9'</i></small></li>
+			<!--pow(x,y)-->
+			<li><b>pow(x,y)</b> <small>-- potência e.g. <i>'pow(3,3) = 9'</i> diferente do operador acima (**), este é ignorado na ordem de cálculo aritmética (1º ^, 2º *, 3/4º +/-) onde parênteses se resolvem primeiro</small></li>
+			<p><b>OBSERVAÇÃO: A raiz de um número pode ser extraída elevando o número ao valor que corresponde á metade do seu ídice(raiz).<br>
+			Exemplo: 9**0.5 = 3<br>
+			&nbsp &nbsp &nbsp &nbsp &nbsp a</b></p><br>
+			<!--%-->
+			<li><b>%</b> <small>-- módulo, retorna o resto da divisão e.g. <i>10%3 = 1</i></small></li>
+			<!--//-->
+			<li><b>//</b> <small>-- omite a parce fracionária (decimal) de uma divisão não inteira (resto) e.g. <i>10//3 = 3, quando o resultado deveria ser uma dízima periódica: 3.3333333333333335</i></small></li>
+			<!--( )-->
+			<li><b>( ) </b> <small>-- expressões entre parênteses serão, naturalmente, executadas primeiro e.g. <i>5*(2+20) => 22*5 = 110, quando o resultado correto seria 30 pois 5*2+20 => 10+20</i></small></li>
+		</ul>
+		<br><br>
+
+		<h2>Texto(strings)</h2>
+		<ul>
+			<!--\n-->
+			<li><b>"\n"</b><small> --pula uma linha (equivalente ao '< br >' no HTML</small></li>
+			<!--\t-->
+			<li><b>"\t"</b><small> --tab (4 espaços)</small></li>
+			<!--f'-->
+			<li>print(<b>f'</b><small>-- necessário para a concatenação de variáveis em strings, adicionando o nome da variável desejada envolto por chaves ({nome_variável:02})(: requirido para indicar formatação de texto adicional e o '02' indica o número de casas, :.2 indica o número de casas decimais quando o número é um float)</small></li>
+			<!--find()-->
+			<li>.find(< target >)<small>-- retorna o padrão argumentado, caso não seja encontrado, retorna 'False'</small></li>
+			<!--count()-->
+			<li>count(< string >)<small>-- retorna a quanitade de caracteres em uma string</small></li>
+			<!--replace-->
+			<p>REPLACE</p>
+		</ul>
+		
+		<h3>Formatação de texto com strings</h3>
+		<ul>
+			<!--Alinhar ao centro com X espaços-->
+			<li><b>{: ^ X < string >}</b><small> --centraliza o texto em X casas decimais</small></li>
+			<!--Alinhar à esquerda com X espaços-->
+			<li><b>{: < X < string >}</b><small> --centraliza o texto à esquerda em X casas decimais</small></li>
+			<!--Alinhar à direita com X espaços-->
+			<li><b>{: > X < string >}</b><small> --centraliza o texto à direita em X casas decimais</small></li>
+			<!--end=''-->
+			<li><b>print('...string'<b>, end=''</b>)</b><small> --determina o que será inserido no final da linha que uma função <b>print( )</b> imprime. Caso seja deixado vazio, a quebra de linha automática imediata ao <b>print()</b> subsequente não será implementada</small></li>
+			<!--sep=''-->
+			<li>print('string_qualquer'<b>, sep='</b>(conteudo)<b>'</b><small>-- determina o caractere a ser adicionado entre uma palavra e outra, se não especificado, o padrão é um espaço em branco (_)</small></li>
+			<!--upper()-->
+			<li>string<b>.upper()</b><small> --converte o texto da string em CAIXA ALTA</small></li>
+			<!--lower()-->
+			<li>string<b>.lower()</b><small> --converte o texto da string em caixa baixa</small></li>
+			<!--title()-->
+			<li>string<b>.title()</b><small> --converte a primeira letra de cada palavra em CAIXA ALTA</small></li>
+			<!--capitalize()-->
+			<li>string<b>.capitalize()</b><small> --converte a primeira letra da string em CAIXA ALTA</small></li>
+			<!--strip()-->
+			<li>string<b>.strip()</b><small> --remove quaisquer espaços extras à <b>direita e esquerda</b> da string e.g. em uma entrada pelo usuário</small></li>
+			<!--lstrip()-->
+			<li>string<b>.lstrip()</b><small> --remove quaisquer espaços extras à <b>esquerda</b> da string e.g. em uma entrada pelo usuário</small></li>
+			<!--rstrip()-->
+			<li>string<b>.rstrip()</b><small> --remove quaisquer espaços extras à <b>direita</b> da string e.g. em uma entrada pelo usuário</small></li>
+			<!--split()-->
+			<li>string<b>.split()</b><small> --cria uma lista a partir de uma string onde cada item é separado por um espaço na string</small></li>
+			<!--join()-->
+			<li>string<b>.join()</b><small> --une a string em uma só e.g. <i>frase = 'O L Á' => '_espaço_'.join(frase) => 'O_espaço_L_espaço_Á'</i></small></li>
+			<br>
+			<!--Formatação com alinhamento, preenchimento e espaçamento de caracteres-->
+			<li>print(f'{listagem[pos]<b>:.<30</b>}')<small> --- nessa linha, o <b>' : '</b> informa ao interpretador que a string será formatada, o <b>' . '</b> imprime o caractere . até o final do número de casas especificado com ó número <b>'30'</b>, e o <b>' < '</b> informa ao interpretador que o texto será alinhado à esquerda. <b>< ^ ></b> estes caracteres alinham o texto à equerda, centralizado e direita respecitivamente</small></li>
+		</ul>
+		<br><br>
+
+		<h2>Listas</h2>
+		<ul>
+			<!--.insert()-->
+			<li><i>nome_lista</i><b>.insert(</b><i>index</i>, <i>item</i><b>)</b> <small>-- insere um item em <i>index</i> (int) </small></li>
+
+			<!--.append()-->
+			<li><i>nome_lista</i><b>.append(</b>conteúdo/variável<b>)</b> <small>-- insere item no final</small></li>
+
+			<!--.pop-->
+			<li><i>nome_lista</i><b>.pop(</b><i>index</i><b>)</b> <small>-- remove item e armazena na memoria (pode ser colocado em uma variavel designando o comando para o valor de uma)</small></li>
+
+			<!--del-->
+			<li><b>del</b> <i>nome_lista</i><b>[</b><i>index</i><b>]</b><small>-- remove um item da lista/dicionário [nºX] </small></li>
+
+			<!--.remove-->
+			<li><i>nome_lista</i><b>.remove(</b><i>item</i><b>)</b><small>-- remove o item pelo nome (procurando e removendo em seguida)</small></li>
+		
+			<!--sorted-->
+			<li><b>sorted(</b><i>nome_lista</i><b>)</b><small>-- organiza a lista/dicionário em ordem alfabética <b>temporariamente</b> (utilizando o parâmetro <b>reverse=True</b>, a ordem é invertida)</small></li>
+
+			<!--len-->
+			<li><b>len(</b><i>nome_lista</i><b>)</b><small>-- retorna o tamanho de uma lista/string em caracteres</small></li>	
+
+			<!--.reverse-->
+			<li><i>nome_lista</i><b>.reverse( )</b><small>-- organiza a lista em ordem alfabética reversa <b>permanentemente</b></small></li>
+
+			<!--sort--> 
+			<li><i>nome_lista</i><b>.sort( )</b><small>-- organiza a lista em ordem alfabética <b>permanentemente</b> (utilizando o parâmetro <b>reverse=True</b>, a ordem é invertida)</small></li>
+
+			<!--count--> 
+			<li><i>nome_array/string</i><b>.count(algarismo)</b><small>-- retorna o número de vezes que um (algarismo) objeto está contido num array/string</small></li>
+
+			<!--index--> 
+			<li><i>nome_array/string</i><b>.index(algarismo, posição à iniciar a contagem de)</b><small>-- retorna a posição em que o (algarismo) está contido num array/string. Se o segundo parâmetro for omitido, inciará a partir do index 0</small></li>
+
+			<!--enumerate-->
+			<li><i>enumerate</i><b>(</b><i>objeto, start=X</i><b>)</b> <small>-- retorna um objeto enumerado contatenando o numerador em uma tupla no formato <i>(enum, item). O objeto deve ser um <b>int</b>, um <b>array</b> ou qualquer outro objeto que suporte iteração.<br>Exemplo:<br> >>> estacoes = ['Primavera', 'Verão', 'Outono', 'Inverno']<br>
+				>>> list(enumerate(estacoes))<br>
+				[(0, 'Primavera'), (1, 'Verão'), (2, 'Outono'), (3, 'Inverno')]<br>
+				>>> list(enumerate(estacoes, start=1))<br>
+				[(1, 'Primavera'), (2, 'Verão'), (3, 'Outono'), (4, 'Inverno')]<br>
+				<br>
+				</small></li>
+
+			<!--min,max e sum-->
+			<li><b>sum(<i>nome_lista</i>)</b><small>-- retorna a soma de todos os números da lista.</small></li>
+			<li><b>max(<i>nome_lista</i>)</b><small>-- retorna o maior número da lista.</small></li>
+			<li><b>min(<i>nome_lista</i>)</b><small>-- retorna o menor número da lista.</small></li>
+			<br>
+			<p><b>OBSERVAÇÃO:</b> Os itens que nao modifiquem diretamente o valor contido em um array do tipo tupla (e.g. <i>sum, min, max</i>) também podem ser usados em tuplas</p>
+			<br>
+			<li>Também é possível adicionar tuplas ou dicionário dentro de uma lista:<br><small>
+				>>> dicionario = {'nome':'Erick', 'num': 123}<br>
+				>>> lista = [dicionario, 'string 1', 'int 2', 'float 3']<br>
+				>>> lista<br>
+				>>> [{'nome':'Erick', 'num': 123}, 'string 1', 'int 2', 'float 3']<br>
+			</small></li>
+		</ul>
+		<br><br>
+
+		<h2>Dicionários</h2>
+		<ul>
+			<!--items(-->
+			<li><b>items(</b><i>nome_dicionário</i><b>)</b><small>-- retorna uma lista de pares < chave >:< valor > de um determindo dicionário</small></li>
+			<!--keys()-->
+			<li><b>keys(</b><i>nome_dicionário</i><b>)</b><small>-- devolve uma lista de todas as chaves do dicionário.</small></li>
+			<p>"Percorrer  as  chaves,  na  verdade,  é  o  comportamento-padrão  quando percorremos um dicionário com um laço, portanto este código produzirá a mesma saída se escrevêssemos:<br><b>for name in favorite_languages:</b><br>em vez de:<br><b>for name in favorite_languages.keys():</b>"
+			<br>
+			<li><b>values(</b><i>nome_dicionário</i><b>)</b><small>-- devolve uma lista de todos os valores do dicionário.</small></li>
+		</ul>
+		<br><br>
+
+		<h2>Operadores Lógicos</h2>
+		<ul>
+			<!--and-->
+			<li><b>and - </b><small>-- analisa duas condições simultaneamente e só retorna 'True' se as duas forem 'True'</small></li>
+
+			<!--or-->
+			<li><b>or - </b><small>-- analisa duas condições simultaneamente e retorna 'True' se pelo meno uma das condições forem verdadeiras</small></li>
+
+			<!--not-->
+			<li><b>not - </b><small>-- pode se comparar à <b><i>not</i> False:</b> pass| / usado para inverter uma booleana, muda de 'True' para 'False' e de 'False' para 'True'</small></li>
+
+			<!--is-->
+			<li><b>is - </b><small>-- checa se dois objetos tem o mesmo ID (id(x)), mesmo valor na memória</small></li>
+
+			<!--is not-->
+			<li><b>is not- </b><small>-- o inverso de < is ></small></li>
+
+			<!--in-->
+			<li><b>in - </b><small>-- checa se o objeto está contido em (array, string...)</small></li>
+
+			<!--not in-->
+			<li><b>not in - </b><small>-- checa se o objeto <b>NÃO</b> está contido em (array, string...)</small></li>
+		</ul>
+		<br><br>
+		
+		<h2>Operadores de comparação</h2>
+		<ul>
+			<!--==-->
+			<li><b>== </b><small>-- igual a, analisa o conteúdo de duas variáveis e retorna 'True' se o conteúdo for igual, e 'False' se o conteúdo for diferente (não confundir com o operador único <b>=</b>, este é usado na criação de variáveis para se atribuir um valor especícfico.)</small></li>
+
+			<!--!=-->
+			<li><b>!= </b><small>-- diferente de, analisa o conteúdo de duas variáveis e retorna 'True' se o conteúdo for diferente, e 'False' se o conteúdo for igual</small></li>
+
+			<!-->-->
+			<li><b> > </b><small>-- maior que, analisa o conteúdo de duas variáveis e retorna 'True' se o conteúdo for maior, e 'False' se o conteúdo for menor</small></li>
+
+			<!--<-->
+			<li><b> < </b><small>-- menor que, analisa o conteúdo de duas variáveis e retorna 'True' se o conteúdo for menor, e 'False' se o conteúdo for maior</small></li>
+
+			<!-->=-->
+			<li><b> >= </b><small>-- maior ou igual, analisa o conteúdo de duas variáveis e retorna 'True' se o conteúdo for maior ou igual, e 'False' se o conteúdo for menor</small></li>
+
+			<!--<=-->
+			<li><b> <= </b><small>-- menor ou igual, analisa o conteúdo de duas variáveis e retorna 'True' se o conteúdo for menor ou igual, e 'False' se o conteúdo for maior</small></li>
+
+			<!--is-->
+			<li><b> is </b><small>-- analisa se dois objetos são idênticos na memória comparando o ID de cada objeto e retorna 'True' caso sim, e 'False' caso não. O ID de cada objeto pode ser obtido através do comando: <b>id(< objeto ou variável >)</b><br>O mesmo que id(a) == id(b)</small></li>
+		</ul>
+		<br><br>
+
+		<h2>Declarações que Python avalia como 'False'</h2>
+		<ul>
+			<!--False-->
+			<li><b>'False'</b></li>
+			<li><b>'None'</b></li>
+			<li><b>Número Zero</b><small> -- de qualquer tipo numérico | Exemplo: 0, 0.00</small></li>
+			<li><b>Qualquer sequência vazia</b><small> -- Exemplo: '', [], (), {}</small></li>
+			<p>Todo o resto será avaliado como 'True'</p>
+		</ul>
+		<br><br>
+
+		<h2>Misc</h2>
+		<ul>
+			<!--del-->
+			<li><b>del(objeto) </b><small>-- deleta um objeto da memória, este pode ser uma variável ou um array.</small></li>
+		</ul>
+		<br><br>
+		
+	<br><br>
+	<hr>
+	<small><i>texto em itálico</i> = <b>substitua</b></small>
+		
+	</body>
+</html>
