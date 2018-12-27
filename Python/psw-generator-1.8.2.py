@@ -4,53 +4,38 @@ import os
 from time import sleep
 from string import ascii_uppercase, ascii_lowercase, digits
 
-alldata = [
-'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',\
-'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',\
-'!','@','#','$','%','&','*',\
-'1','2','3','4','5','6','7','8','9','0'
-]
-
-uppercase = [
-'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',\
-]
-
-lowercase = [
-'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',\
-]
-
-nums = [
-'1','2','3','4','5','6','7','8','9','0'
-]
-
-specchars = [
-'!','@','#','$','%','&','*',\
-]
-
+# Declaring all lists with the standard library
+alldata = [ascii_lowercase, ascii_uppercase, digits, specchars]
+uppercase = [ascii_uppercase]
+lowercase = [ascii_lowercase]
+nums = [digits]
+specchars = ['!','@','#','$','%','&','*','(',')','-','_','=','+']
 psw_list = []
-
 psw_length = int(0)
 
+# Clear the screen according to the OS the user is running
 def init():
 	if os.name in('nt', 'me', 'ce'):
 		os.system("cls")
 	elif os.name == "posix":
 		os.system("clear")
 
+# Starting the script
 def main():
 	print("#"*25 + " Password Generator " + "#"*25)
 	print()
 	print("What is the password's length? ")
 	global psw_length
 	psw_length = int(input(">> "))
-
 	gen_psw()
 
+# Generating the password
 def gen_psw():
 	global finally_formated_psw
 
 	print("How do you want your password?")
-	print("\n\t1 - UPPERCASE ONLY\n\t2 - lowercase only\n\t3 - 1234567890 only\n\t4 - !@#$%¨&* only\n\t5 - Mixed 12ab!@\n\t")
+	print("\n\t1 - UPPERCASE ONLY\n\t2 - lowercase only\n\t3 - 1234567890 only\n\t\
+		4 - !@#$%¨&* only\n\t5 - Mixed 12ab!@\n\t")
 	psw_chars_type = str(input(">> "))
 	if psw_chars_type == "1":
 		print("Here is your password, store it with care: ")
@@ -97,6 +82,7 @@ def gen_psw():
 		gen_psw()
 	write_psw_hdd()
 
+# Write the password to an file on the disk
 def write_psw_hdd():
 	print()
 	print("Save the password to a txt (plain text) file? (Y/N)\n\t")
@@ -116,11 +102,11 @@ def write_psw_hdd():
 		print("Please, enter only 'Y' or 'N'.")
 		write_psw_hdd()
 
+# Ask if the user wants to generate another password calling main()
 def gen_psw_again():
 	print()
 	print("Generate another password? (Y/N)")
 	loop = str(input(">> ".lower()))
-
 	if loop == "y":
 		main()
 	elif loop == "n":
@@ -131,9 +117,7 @@ def gen_psw_again():
 		exit(0)
 	elif loop not in('y', 'n'):
 		print("Please, enter only 'Y' or 'N'.")
-
 		gen_psw_again()
-
 
 if __name__ == '__main__':
 	init()

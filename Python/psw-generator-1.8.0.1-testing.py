@@ -4,31 +4,13 @@ import os
 from time import sleep
 from string import ascii_uppercase, ascii_lowercase, digits
 
-alldata = [
-'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',\
-'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',\
-'!','@','#','$','%','&','*',\
-'1','2','3','4','5','6','7','8','9','0'
-]
-
-uppercase = [
-'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',\
-]
-
-lowercase = [
-'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',\
-]
-
-nums = [
-'1','2','3','4','5','6','7','8','9','0'
-]
-
-specchars = [
-'!','@','#','$','%','&','*',\
-]
-
+# Declaring all lists with the standard library
+alldata = [ascii_lowercase, ascii_uppercase, digits, specchars]
+uppercase = [ascii_uppercase]
+lowercase = [ascii_lowercase]
+nums = [digits]
+specchars = ['!','@','#','$','%','&','*','(',')','-','_','=','+']
 psw_list = []
-
 psw_length = int(0)
 
 def init():
@@ -43,7 +25,6 @@ def main():
 	print("What is the password's length? ")
 	global psw_length
 	psw_length = int(input(">> "))
-
 	gen_psw()
 
 def gen_psw():
