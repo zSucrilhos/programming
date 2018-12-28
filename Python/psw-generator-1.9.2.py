@@ -12,6 +12,7 @@ nums = list(digits)
 
 alldata = lowercase + uppercase + nums + specchars
 
+# Necessary to intialize the variable
 psw_length = int(0)
 
 def init():
@@ -26,9 +27,12 @@ def main():
 	print("#"*25 + " Password Generator " + "#"*25)
 	print()
 	print("What is the password's length? ")
-	
-	psw_length = int(input(">> "))
-	gen_psw(psw_length)
+	try:
+		psw_length = int(input(">> "))
+		gen_psw(psw_length)
+	except ValueError:
+		print("You must enter an integer\n")
+		main()
 
 def gen_psw(psw_length):
 	""" Generating the password
