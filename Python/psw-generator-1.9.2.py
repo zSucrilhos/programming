@@ -25,8 +25,7 @@ def init():
 def main():
 	""" Initial function"""
 	print("#"*25 + " Password Generator " + "#"*25)
-	print()
-	print("What is the password's length? ")
+	print("\nWhat is the password's length? ")
 	try:
 		psw_length = int(input(">> "))
 		gen_psw(psw_length)
@@ -97,8 +96,7 @@ def write_psw_hdd(finally_formated_psw):
 	""" Ask if the user wants to generate another password calling main()
 	and write the file to disk, if wanted by the user.
 	This uses the write() method """
-	print()
-	print("Save the password to a txt (plain text) file? (Y/N)\n\t")
+	print("\nSave the password to a txt (plain text) file? (Y/N)\n\t")
 	write_prompt = str(input(">> ".lower()))
 	if write_prompt == "y":
 		print("Save file as:\t")
@@ -117,14 +115,12 @@ def write_psw_hdd(finally_formated_psw):
 
 def gen_psw_again():
 	""" Ask if the user wants to generate another password calling main()"""
-	print()
-	print("Generate another password? (Y/N)")
+	print("\nGenerate another password? (Y/N)")
 	loop = str(input(">> ".lower()))
 	if loop == "y":
 		main()
 	elif loop == "n":
-		print()
-		print("Bye!")
+		print("\nBye!")
 		sleep(0.3)
 		init()
 		exit(0)
