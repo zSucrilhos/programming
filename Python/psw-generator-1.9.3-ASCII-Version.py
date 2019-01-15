@@ -2,15 +2,6 @@
 from random import randint, choice
 from os import system, name
 from time import sleep
-from string import ascii_uppercase, ascii_lowercase, digits
-
-# Declaring all lists with the standard library
-specchars = ['!','@','#','$','%','&','*','(',')','-','_','=','+']
-uppercase = list(ascii_uppercase)
-lowercase = list(ascii_lowercase)
-nums = list(digits)
-
-alldata = lowercase + uppercase + nums + specchars
 
 # Necessary to intialize the variable
 psw_length = int(0)
