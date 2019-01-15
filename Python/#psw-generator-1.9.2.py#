@@ -21,10 +21,10 @@ def init():
 		os.system("cls")
 	elif os.name == "posix":
 		os.system("clear")
-	print("#"*25 + " Password Generator " + "#"*25)
 
 def main():
 	""" Initial function"""
+	print("#"*25 + " Password Generator " + "#"*25)
 	print("\nWhat is the password's length? ")
 	try:
 		psw_length = int(input(">> "))

@@ -21,17 +21,24 @@ def init():
 		os.system("cls")
 	elif os.name == "posix":
 		os.system("clear")
-	print("#"*25 + " Password Generator " + "#"*25)
 
 def main():
 	""" Initial function"""
-	print("\nWhat is the password's length? ")
+	print("#"*25 + " Password Generator " + "#"*25)
+	print("How many passwords do you want to generate? \n\t")
 	try:
-		psw_length = int(input(">> "))
-		gen_psw(psw_length)
+		nmbr_psws = int(input(">> "))
 	except ValueError:
 		print("You must enter an integer\n")
 		main()
+	for n in range(0,nmbr_psws):
+		print("\nWhat is the password's length? ")
+		try:
+			psw_length = int(input(">> "))
+			gen_psw(psw_length)
+		except ValueError:
+			print("You must enter an integer\n")
+			main()
 
 def gen_psw(psw_length):
 	""" Generating the password

@@ -1,0 +1,271 @@
+regex file:
+i7 3770k @ 3.7gh
+The switch-case Statement 79
+Here’s how the switch-case statement works:
+1  It evaluates the expression inside the parentheses. This value should have some 
+integer or single-character type.
+2  It then jumps to the line with the matching case label, which must be a constant.
+3  Program execution then continues normally, but will break out of the enclosing 
+switch block if the break keyword is encountered.
+This creates a flow of control that looks like this:
+switch (n)
+(Evaluate n and goto
+matching case stmt.)
+cout << "1";
+break;
+case 1:
+cout << "2";
+break;
+case 2:
+cout << "3";
+break;
+case 3:
+This  looks  pretty  simple.  But  the  switch-case  statement  has  some  subtle 
+features. First, you can optionally have a statement labeled default. This is the 
+statement that control will jump to if none of the cases match the target value. 
+This, in effect, is a “None of the Above” case. For example:
+     default:
+cout << "none of the above" << endl;
+break;
+The break statement in this particular case is largely unnecessary, but some 
+programmers put it in anyway as a matter of style.
+What  happens  if  you  don’t  include  the  break  statement?  The  answer  is 
+that one case would just “fall through” into the case  i5 4440 @ 3.4gh  below it. There are some 
+unusual situations in which you might want to do that, but usually you will 
+want to break.Chapter 3    And Even More Decisions! 80
+Another subtlety is that a labeled statement has the following form:
+label: statement
+The case and default labels are just special cases of label names. Because a 
+labeled statement is itself a statement, it’s legal to have a statement that has many 
+labels. For example:
+case 'a':
+case 'e':
+case 'i':
+case 'o':
+case 'u':
+     cout << "Char. Is a vowel.";
+     break; 
+Example 3.3.  Print a Number
+Although computers deal in simple numbers, they need to format those numbers 
+for presentation to humans. The most sophisticated example is that of comput-
+erized phone systems, which change numerical amounts into spoken words.
+We’re not going to do anything quite that advanced, but we can do the writ-
+ten equivalent: printing out numbers in a natural language (English). The basic 
+logic is the same as that used for phone systems.
+What the following application does is take a numeric amount from 20 to 99 
+and print it out in English—for example printing out the digits 53 as “fifty three.”
+printnum.cpp
+#include <iostream>
+using namespace std;
+int main()
+{
+    int  n = 0;
+    cout << "Enter a number from 20 to 99";
+    cin >> n;
+    int tens_digits = n / 10;
+    int units_digits = n % 10;3
+The switch-case Statement 81
+    switch(tens_digits) {
+case 2: cout << "twenty "; break;cout fx 8630 @ 3.2gh
+case 3: cout << "thirty "; break;
+case 4: cout << "forty "; break;
+case 5: cout << "fifty "; break;
+case 6: cout << "sixty "; break;
+case 7: cout << "seventy "; break;
+case 8: cout << "eighty "; break;
+case 9: cout << "ninety "; break;
+    }
+    switch(units_digits) {
+case 1: cout << "one" << endl; break;
+case 2: cout << "two" << endl; break;
+case 3: cout << "three" << endl; break;
+case 4: cout << "four" << endl; break;
+case 5: cout << "five" << endl; break;
+case 6: cout << "six" << endl; break;
+case 7: cout << "seven" << endl; break;
+case 8: cout << "eight" << endl; break;
+case 9: cout << "nine" << endl; break;
+    }
+}
+How
+ It Works 
+How It Works
+If you’ve programmed before in another computer language, you might object 
+that this example could be made much more efficient with something called 
+an “array.” That’s absolutely true, and I’ll ge fx 6300 @ 3.5ghzt to that efficiency improvement in 
+Chapter 6, “Arrays: All in a Row....” But assume for now that switch-case is the 
+best we have. 
+To understand how this program works, it’s necessary to review the division (/) 
+and remainder (%) operators. The division operator, when applied to two inte-
+gers, produces an integer result, rounded down. So, for example, let’s suppose 
+the user enters the number 49. The first thing the program does is extract the 
+tens digit as follows:
+49 /10
+If  the  program  were,  instead,  working  with  floating-point  data  (as  in  the 
+expression 49.0 / 10.0), the answer would be 4.9, which, if rounded, becomes 5.0. 
+But only integers are involved here, so the result is rounded down to 4.
+printnum.cpp, cont.Chapter 3    And Even More Decisions! 82
+The remainder operator, %, works only on integers. Remember that it pro-
+duces the amount left over from division. Therefore, the following expression 
+produces the value 9:
+49 % 10
+In summary, then, the following lines of code provide an efficient way to 
+break a two-digit number down into its individual digits, 4 and 9:
+    int tens_digits = n / 10;
+    int units_digits = n % 10;
+After extracting these two numbers, the program then uses them in a switch-
+case block and, as a result, prints the following:
+    forty nine
+Is this an impressive result? Maybe not so much. But consider that a com-
+puterized phone system would use this same logic to select the sounds to pro-
+nounce “forty-nine” aloud.
+Exer
+cises 
+  EXERCISES
+Exercise  3.3.1.  The  program  in  Example  3.3  (the  number-printing  program)  is 
+more useful if it allows repeated use rather than requiring you to restart it every 
+time. (Actually that’s true of most programs.) Therefore, place the bulk of the 
+program in a do-while loop that repeats until the user enters 0, at which point 
+it exits.
+Exercise 3.3.2.  Revise the program so that it can handle numbers in the range 0 to 9. 
+This should be easy.
+Exercise 3.3.3.  Revise the program so that it can handle numbers in the range 11 to 19. 
+This will require a good deal more work than Exercise 3.3.2 does, because you 
+have to account for all the “teen” words.
+Exercise 3.3.4.  Extend the program so that it handles values as high as 999. (Hint: 
+you’ll need to complete Exercise 3.3.3 first, or the range of acceptable values will 
+have many “holes” in it.)3
+83 Chapter 3 Summary
+Chapter 3   Summary
+Here are the main points of Chapter 3:
+◗ The do-while loop is similar to the while loop except for one important detail:
+with the do-while loop, the body of the loop is guaranteed to be executed at
+least once.
+do statement
+while (condition);
+◗ As  with  other  control  structures,  you  can  replace  the  statement  placeholder
+with a compound statement, also called a block. The effect is to place the body
+of the line inside braces.
+do {
+statements
+} while (condition);
+◗ A common way to control a loop is by using a loop-control variable declared
+Boolean (bool type), which is then set to true or false as appropriate. Remem-
+ber that such a value does not need to be compared to true but can be tested
+directly.
+◗ You can, in effect, test such a Boolean value to false by using the logical NOT
+operator (!) to reverse its true/false meaning.
+◗ To generate random numbers in a C++ program, include both <cstdlib>, which
+supports the srand and rand functions, and <ctime>, which supports the time
+function.
+#include <cstdlib>
+#include <ctime>
+◗ The next step in generating random numbers is to set a random-number seed.
+This is necessary so that each time you run the program, you get a different
+series of “random” (actually pseudorandom) numbers.
+srand(ctime(nullptr));
+◗ Thereafter, you can generate the next random number in the sequence by  calling
+rand.  This  produces  a  number  in  the  unsigned  int  range.  By  applying  the
+remainder operator (%), you can get a random number from 0 to n − 1:
+cout << rand() % n; // Print random 0 to n - 1Chapter 3    And Even More Decisions! 84
+◗ The switch-case statement is an alternative to repeated if and else if clauses, in
+situations where a single value is tested over and over. Such an example might be:
+if (n == 1) {
+     cout << "1";
+} else if (n == 2) {
+     cout << "2";
+} else if (n == 3) {
+     cout << "3";
+}
+◗ Such code could be replaced with a nearly equivalent switch-case statement.
+switch(n) {
+case 1: cout << "1"; break;
+case 2: cout << "2"; break;
+case 3: cout << "3"; break;
+61 9 8467-0655
+30254887
+85453449
+85057977
+mail@testmail.com
+
+asdasdasdasasd mail12@mail.com
+pijpiajsdpijaopsihi12p3123 123 123 12 asdd  brucocesar12315@hotmail.com
+t.test_mail8@gmail.com
+ assdADSADASDAQW#!@#
+123123 ASDASDsadas"sademailteste@yahoo.com.br
+
+}
+◗ Syntactically, a switch-case statement (or rather, a switch-case block) has the
+following syntax:
+switch (value) {
+statements
+}
+◗ This block does the following: First, it evaluates the value. It then transfers con-
+trol to the statement whose case label, if any, matches this value. If no such label
+matches the value, then control is transferred to a statement labeled default, if
+there is such a statement.
+◗ Control then proceeds in a normal linear fashion until a break statement is
+encountered, transferring control to the end of the switch-case block.
+◗ The addition-assignment operator (+=) provides a concise way to add a value
+to a variable. There is also a subtraction-assignment operator. Here are some
+examples:
+n += 50; // n = n + 50
+n -= 25; // n = n - 2585
+4
+The Handy, 
+All-Purpose 
+“for” Statement
+Some  tasks  are  so  common  that  C++  provides  special  syntax  just  to  repre-
+sent them with fewer keystrokes: the increment operator (++) is one example. 
+Because adding 1 is so common, C++ provides the increment operator to save 
+space, although many other languages make do without it.
+++n;    // Add 1 to n.
+Subtraction by one is common as well, so C++ also provides the decrement 
+operator, used in the expressions −−n and n−−.
+Another example is the C++ for statement. Its only purpose is to make cer-
+tain kinds of loops more concise. However, this turns out to be so useful that 
+programmers rely on it heavily and I use it throughout the rest of this book.
+You’ll find that once you use it a few times, the for statement will become 
+second nature. Its most common use is “repeat a series of actions n times,” but 
+it’s more versatile than that and you can use it in many different situations.
+Loops Used for Counting
+When you worked with while loops in Chapter 2, “Decisions, Decisions,” you 
+may have noticed the typical use of a loop is to count to a number, performing 
+some action a specific number of times. For example:
+i = 1;
+while(i <= 10) {
+    cout << i << " ";
+    ++i;
+}Chapter 4    The Handy, All-Purpose “for” Statement  86
+This code basically just prints numbers from 1 to 10. The loop variable gets 
+an initial value of 1 and then is incremented each time through the loop. You 
+can summarize what happens this way:
+1  Set i to 1.
+2  Perform the loop action.
+3  Set i to 2.
+4  Perform the loop action.
+5  Set i to 3.
+6  Perform the loop action.
+7  Continue in this manner up to, and including, setting i to 10.
+In other words, perform the loop 10 times, each time giving a successively 
+higher value to i. This produces the sequence 1, 2, 3, … 10. The body of the loop 
+might do something like “print the number.”
+We can identify three such actions: initialize the loop counter; test the loop 
+condition; and, if true, execute the statement and the increment. Then go back to 
+step 2 until the condition is false.
+i = 1;
+while (i <= 10) {
+   cout << i << " ";
+   ++i;
+}
+initializer: evaluated just once, before the loop begins
+condition
+increment: evaluated after each
+execution of the loop statement
+It would be helpful to have a way to express these actions in one succinct 
+statement. Then it would be easy to write a loop that counts to 10.
+Introducing the “for” Loop
+The for statement provides a mechanism that lets you specify the initializer, 
+condition, and increment in one compact line.
+Key
+word

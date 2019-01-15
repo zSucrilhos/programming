@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-import random
-import os
+from random import randint, choice
+from os import system, name
 from time import sleep
 from string import ascii_uppercase, ascii_lowercase, digits
 
@@ -17,10 +17,10 @@ psw_length = int(0)
 
 def init():
 	""" Clear the screen according to the OS the user is running"""
-	if os.name in('nt', 'me', 'ce'):
-		os.system("cls")
-	elif os.name == "posix":
-		os.system("clear")
+	if name in('nt', 'me', 'ce'):
+		system("cls")
+	elif name == "posix":
+		system("clear")
 	print("#"*25 + " Password Generator " + "#"*25)
 
 def main():
@@ -46,8 +46,10 @@ def gen_psw(psw_length):
 		print("Here is your password, store it with care: ")
 		for n in range(0,psw_length):
 			n += 1
-			generated_psw = random.choice(uppercase)
-			almost_formated_psw = psw_list.append(generated_psw)
+			# We need some numbers to convert to ASCII
+			rand = int(randint(65,90))
+			rand2 = convert_into_ascii(rand)
+			almost_formated_psw = psw_list.append(rand2)
 			finally_formated_psw = ''.join(psw_list)
 		print(finally_formated_psw)
 		psw_list = []
@@ -55,8 +57,10 @@ def gen_psw(psw_length):
 		print("Here is your password, store it with care: ")
 		for n in range(0,psw_length):
 			n += 1
-			generated_psw = random.choice(lowercase)
-			almost_formated_psw = psw_list.append(generated_psw)
+			# We need some numbers to convert to ASCII
+			rand = int(randint(97,122))
+			rand2 = convert_into_ascii(rand)
+			almost_formated_psw = psw_list.append(rand2)
 			finally_formated_psw = ''.join(psw_list)
 		print(finally_formated_psw)
 		psw_list = []
@@ -64,8 +68,10 @@ def gen_psw(psw_length):
 		print("Here is your password, store it with care: ")
 		for n in range(0,psw_length):
 			n += 1
-			generated_psw = random.choice(nums)
-			almost_formated_psw = psw_list.append(generated_psw)
+			# We need some numbers to convert to ASCII
+			rand = int(randint(48,57))
+			rand2 = convert_into_ascii(rand)
+			almost_formated_psw = psw_list.append(rand2)
 			finally_formated_psw = ''.join(psw_list)
 		print(finally_formated_psw)
 		psw_list = []
@@ -73,8 +79,10 @@ def gen_psw(psw_length):
 		print("Here is your password, store it with care: ")
 		for n in range(0,psw_length):
 			n += 1
-			generated_psw = random.choice(specchars)
-			almost_formated_psw = psw_list.append(generated_psw)
+			# We need some numbers to convert to ASCII
+			rand = int(randint(33,126))
+			rand2 = convert_into_ascii(rand)
+			almost_formated_psw = psw_list.append(rand2)
 			finally_formated_psw = ''.join(psw_list)
 		print(finally_formated_psw)
 		psw_list = []
@@ -82,8 +90,10 @@ def gen_psw(psw_length):
 		print("Here is your password, store it with care: ")
 		for n in range(0,psw_length):
 			n += 1
-			generated_psw = random.choice(alldata)
-			almost_formated_psw = psw_list.append(generated_psw)
+			# We need some numbers to convert to ASCII
+			rand = int(randint(33,126))
+			rand2 = convert_into_ascii(rand)
+			almost_formated_psw = psw_list.append(rand2)
 			finally_formated_psw = ''.join(psw_list)
 		print(finally_formated_psw)
 		psw_list = []
@@ -91,6 +101,11 @@ def gen_psw(psw_length):
 		print("Please, select one of the options listed.")
 		gen_psw(psw_length)
 	write_psw_hdd(finally_formated_psw)
+
+def convert_into_ascii(dec):
+	""" Convert the given input into ASCII """
+	char = str(chr(dec))
+	return char
 
 def write_psw_hdd(finally_formated_psw):
 	""" Ask if the user wants to generate another password calling main()
