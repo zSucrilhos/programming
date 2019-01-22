@@ -10,10 +10,10 @@ specchars = ['!','@','#','$','%','&','*','(',')','-','_','=','+']
 # Necessary to intialize the variable
 psw_length = int(0)
 
-def main():
-	gen_psw(psw_length, psw_type)
+#def main():
+#	gen_psw(psw_length, psw_type)
 
-def gen_psw(psw_length, psw_type=5):
+def gen_psw(psw_length, psw_type):
 	"""
 	Generating the password:
 	This uses an random number and then convert it
@@ -73,26 +73,52 @@ def gen_psw(psw_length, psw_type=5):
 	else:
 		print("You must specify at least one argument")
 		exit(1)
-	
+		
 def convert_into_ascii(dec):
 	""" Convert the given input into ASCII """
 	char = str(chr(dec))
 	return char
 
 if __name__ == '__main__':
-	main()
+	# Initialize the parser 
+	parser = argparse.ArgumentParser(
+		description = "A simple program to generate passwords"
+	)
 
-	""" Using the command line to specify the user options """
-	parser = argparse.ArgumentParser()
-	parser.parse_args()
-	parser.add_argument("psw_length", help="Specify the password's lenght", type=int)
-	parser.add_argument("psw_type", help="Specify the password's type, the default value is 5 (mixed)",\
-type=int)
-	#parser.add_argument("help", help="Display help message")
-	args = parser.parse_args()
+	# Adding the arguments
+	parser.add_argument(
+		"-np, --number-of-passwords",
+		type=int,
+		default=1,
+		help="How many passwords to be generated at a time (default=1 password)"
+		)
 
-	if args.psw_length and args.psw_type:
-		gen_psw(psw_length, psw_type)
+	parser.add_argument(
+		"-pl, --password-length",
+		type=int,
+		default=25,
+		help="The lenght of the password to be generated (default=25 chars long)")
+
+	parser.add_argument(
+		"-pt, --password-type",
+		type=int,
+		default=5,
+		help="\
+The type of the password to be generated (default= 5 - Mixed).\n\
+Possible types are:\n\t\
+1 - UPPERCASE ONLY\n\t\
+2 - lowercase only\n\t\
+3 - 1234567890 only\n\t\
+4 - !@#$%¨&* only\n\t\
+5 - Mixed 12ab!@\n\t"
+)
+
+	# Parse the arguments
+	arguments = parser.parse_args()
+
+	# Do something for now i don't know what
+	gen_psw(, psw_length, psw_type)
+
+	#if args.psw_length and args.psw_type:
+	#	gen_psw(psw_length, psw_type)
 	#elif args.help:
-	#	print("\n\t1 - UPPERCASE ONLY\n\t2 - lowercase only\n\t3 - 1234567890 only\n\t\
-#4 - !@#$%¨&* only\n\t5 - Mixed 12ab!@\n\t")
