@@ -4,7 +4,7 @@ from os import system, name
 from time import sleep
 import argparse
 
-# Necessary to generate a psw with only special characters
+# Necessary to generate a psw only with special characters
 specchars = ['!','@','#','$','%','&','*','(',')','-','_','=','+']
 
 # Necessary to intialize the variable
@@ -37,7 +37,7 @@ def gen_psw(psw_length, psw_type):
 		for n in range(0,psw_length):
 			n += 1
 			# We need some random numbers to convert to ASCII
-			rand = int(randint(97,122)) # This time, only lowercase ones
+			rand = int(randint(97,122)) # This time, only lowercase
 			rand2 = convert_into_ascii(rand)
 			almost_formated_psw = psw_list.append(rand2)
 			finally_formated_psw = ''.join(psw_list)
