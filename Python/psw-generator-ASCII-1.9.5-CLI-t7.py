@@ -10,9 +10,6 @@ specchars = ['!','@','#','$','%','&','*','(',')','-','_','=','+']
 # Necessary to intialize the variable
 psw_length = int(0)
 
-#def main():
-#	gen_psw(psw_length, psw_type)
-
 def gen_psw(psw_length, psw_type):
 	"""
 	Generating the password:
