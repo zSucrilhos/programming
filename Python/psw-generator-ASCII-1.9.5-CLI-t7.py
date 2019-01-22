@@ -122,11 +122,6 @@ Possible types are:\n\t\
 	# Parse the arguments
 	arguments = parser.parse_args()
 
-	# Do something for now i don't know what exactly
-
 	for i in range(0, arguments.repeat):
 		gen_psw(psw_length=arguments.length, psw_type=arguments.type)
 
-	#if args.psw_length and args.psw_type:
-	#	gen_psw(psw_length, psw_type)
-	#elif args.help:
