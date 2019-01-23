@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from random import randint, choice
 import argparse
-import sys
 
 # Necessary to generate a psw only with special characters
 specchars = ['!','@','#','$','%','&','*','(',')','-','_','=','+']
@@ -12,7 +11,7 @@ psw_length = int(0)
 def gen_psw(psw_length, psw_type):
 	"""
 	Generating the password:
-	This uses an random number and then convert it
+	This uses a random number and then convert it
 	into ASCII using the convert_into_ascii() function
 	"""
 	psw_list = [] # A place to store the passwords :)
@@ -48,17 +47,17 @@ def gen_psw(psw_length, psw_type):
 			almost_formated_psw = psw_list.append(rand2)
 			finally_formated_psw = ''.join(psw_list)
 		print(finally_formated_psw)
-		psw_list = []
+		psw_list = [] # Clean the list again
 	elif psw_type == 4:
 		for n in range(0,psw_length):
 			n += 1
-			# Using a list to iterate in the special chars bc couldn't do it \n
-			# with ASCII table
+			# Using a list to iterate in the special chars because couldn't \n
+			# do it with the ASCII table way
 			char = choice(specchars)
 			almost_formated_psw = psw_list.append(char)
 			finally_formated_psw = ''.join(psw_list)
 		print(finally_formated_psw)
-		psw_list = [] # Clear the list
+		psw_list = [] # Clean the list to store more passwords
 	elif psw_type == 5:
 		for n in range(0,psw_length):
 			n += 1
@@ -68,7 +67,7 @@ def gen_psw(psw_length, psw_type):
 			almost_formated_psw = psw_list.append(rand2)
 			finally_formated_psw = ''.join(psw_list)
 		print(finally_formated_psw)
-		psw_list = [] # Clean the list
+		psw_list = [] # Clean the list to store even more passwords
 	else:
 		print("You must specify at least one argument")
 		exit(1)
@@ -82,7 +81,10 @@ def convert_into_ascii(dec):
 if __name__ == '__main__':
 	# Initialize the parser 
 	parser = argparse.ArgumentParser(
-		description = "A simple program to generate passwords"
+		description = "psw-generator: A simple program to generate passwords",
+		usage="%(prog)s [options]",
+		prefix_chars="-",
+		# 86: Format the text the way i want
 	)
 
 	########################
@@ -91,47 +93,50 @@ if __name__ == '__main__':
 
 	# Get the number of passwords
 	parser.add_argument(
-		"-np, --repeat",
+		"-r",
 		type=int,
 		default=1,
 		dest="repeat",
-		help="Number of passwords to be generated at a time (default=1 password)"
+		help="Repeat: Number of passwords to be generated at a time (default=1 password)"
 		)
 
 	# Get the password length
 	parser.add_argument(
-		"-pl, --length",
+		"-l",
 		type=int,
 		default=25,
 		dest="length",
-		help="The lenght of the password to be generated (default=25 chars long)")
-
-	# Show the program's version
-	parser.add_argument(
-		"-v, --version",
-		dest="version",
-		action="store_const",
-		const="psw-generator ASCII Version v2.0.2(23012019-14.17) - by Erick César M.\n\
-GitHub: https://github.com/zSucrilhos",
-		help="Show the program's version.")
+		help="Length: The lenght of the password to be generated (default=25 chars long)")
 
 	# Get the password type
 	parser.add_argument(
-		"-pt, --type",
+		"-t",
 		type=int,
 		default=5,
 		dest="type",
-		help="\
-The type of the password to be generated (default= 5 - Mixed).\n\
-Possible types are:\n\
-\t1 - UPPERCASE ONLY\n\
-\t2 - lowercase only\n\
-\t3 - 1234567890 only\n\
-\t4 - !@#$%%¨&* only\n\
-\t5 - Mixed 12ab!@\
-		")
-	# 114: Escaped '%' because it was interfering with
+		help="""
+Type:
+The type of the password to be generated (default= 5 - Mixed).\n
+Possible types are:\n
+\t1 - UPPERCASE ONLY\n
+\t2 - lowercase only\n
+\t3 - 1234567890 only\n
+\t4 - !@#$%%¨&* only\n
+\t5 - Mixed 12ab!@
+"""
+)
+	# 124: Escaped '%' because it was interfering with \n
 	# "self._get_help_string(action) %" in the argparse module
+
+	# Show the program's version
+	parser.add_argument(
+		"-v",
+		dest="version",
+		action="store_const",
+		const="psw-generator ASCII Version v2.0.2(23012019-16.13)\n\
+by Erick César M. GitHub: https://github.com/zSucrilhos",
+		help="Version: Show the program's version and exit."
+		)
 
 	# Parse the arguments
 	arguments = parser.parse_args()
