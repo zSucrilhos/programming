@@ -113,6 +113,7 @@ if __name__ == '__main__':
 		"-t",
 		type=int,
 		default=5,
+		choices=range(1,6),
 		dest="type",
 		help="""
 Type:
