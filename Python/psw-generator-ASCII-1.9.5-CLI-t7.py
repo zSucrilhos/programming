@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 from random import randint, choice
-from os import system, name
-from time import sleep
 import argparse
 
 # Necessary to generate a psw only with special characters
