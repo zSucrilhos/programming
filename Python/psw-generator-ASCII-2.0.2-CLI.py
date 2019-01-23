@@ -72,6 +72,7 @@ def gen_psw(psw_length, psw_type):
 	else:
 		print("You must specify at least one argument")
 		exit(1)
+	return 0
 		
 def convert_into_ascii(dec):
 	""" Convert the given input into ASCII """
@@ -84,15 +85,20 @@ if __name__ == '__main__':
 		description = "A simple program to generate passwords"
 	)
 
-	# Adding the arguments
+	########################
+	# Adding the arguments #
+	########################
+
+	# Get the number of passwords
 	parser.add_argument(
 		"-np, --repeat",
 		type=int,
 		default=1,
 		dest="repeat",
-		help="How many passwords to be generated at a time (default=1 password)"
+		help="Number of passwords to be generated at a time (default=1 password)"
 		)
 
+	# Get the password length
 	parser.add_argument(
 		"-pl, --length",
 		type=int,
@@ -100,33 +106,41 @@ if __name__ == '__main__':
 		dest="length",
 		help="The lenght of the password to be generated (default=25 chars long)")
 
+	# Show the program's version
+	parser.add_argument(
+		"-v, --version",
+		dest="version",
+		action="store_const",
+		const="psw-generator ASCII Version v2.0.2(23012019-14.17) - by Erick César M.\n\
+GitHub: https://github.com/zSucrilhos",
+		help="Show the program's version.")
+
+	# Get the password type
 	parser.add_argument(
 		"-pt, --type",
 		type=int,
 		default=5,
 		dest="type",
 		help="\
-		The type of the password to be generated (default= 5 - Mixed).\n\
-		Possible types are:\n\t\
-		1 - UPPERCASE ONLY\n\t\
-		2 - lowercase only\n\t\
-		3 - 1234567890 only\n\t\
-		4 - !@#$%¨&* only\n\t\
-		5 - Mixed 12ab!@\n\t"
-		)
-
-	parser.add_argument(
-		"-v, --version",
-		type=str,
-		dest="version",
-		help="Show the program's version.")
+The type of the password to be generated (default= 5 - Mixed).\n\
+Possible types are:\n\
+\t1 - UPPERCASE ONLY\n\
+\t2 - lowercase only\n\
+\t3 - 1234567890 only\n\
+\t4 - !@#$%%¨&* only\n\
+\t5 - Mixed 12ab!@\
+		")
+	# 114: Escaped '%' because it was interfering with
+	# "self._get_help_string(action) %" in the argparse module
 
 	# Parse the arguments
 	arguments = parser.parse_args()
 
-	for i in range(0, arguments.repeat):
-		gen_psw(psw_length=arguments.length, psw_type=arguments.type)
+	# Print the program's version
+	if arguments.version:
+		print(arguments.version)
 
-	
-	if "-v" in sys.argv or "--version" in sys.argv:
-		print("psw-generator ASCII 1.9.5")
+	# Continue the program if the user don't specify the "-v" argument
+	if not arguments.version:
+		for i in range(0, arguments.repeat): # Repeat the function X times
+			gen_psw(psw_length=arguments.length, psw_type=arguments.type)

@@ -107,19 +107,21 @@ if __name__ == '__main__':
 		dest="type",
 		help="\
 		The type of the password to be generated (default= 5 - Mixed).\n\
-		Possible types are:\n\t\
-		1 - UPPERCASE ONLY\n\t\
-		2 - lowercase only\n\t\
-		3 - 1234567890 only\n\t\
-		4 - !@#$%¨&* only\n\t\
-		5 - Mixed 12ab!@\n\t"
-		)
+		Possible types are:\
+		1 - UPPERCASE ONLY\
+		2 - lowercase only\
+		3 - 1234567890 only\
+		4 - !@#$%%¨&* only\
+		5 - Mixed 12ab!@\
+		")
 
-	parser.add_argument(
-		"-v, --version",
-		type=str,
-		dest="version",
-		help="Show the program's version.")
+	#parser.add_argument(
+	#	"-v, --version",
+	#	type=str,
+	#	dest="version",
+	#	action="store_const",
+	#	const="2.0.0",
+	#	help="Show the program's version.")
 
 	# Parse the arguments
 	arguments = parser.parse_args()
@@ -127,6 +129,7 @@ if __name__ == '__main__':
 	for i in range(0, arguments.repeat):
 		gen_psw(psw_length=arguments.length, psw_type=arguments.type)
 
-	
-	if "-v" in sys.argv or "--version" in sys.argv:
-		print("psw-generator ASCII 1.9.5")
+	#print(arguments.version)
+
+	#if arguments.version == True:
+		print(arguments.version)
