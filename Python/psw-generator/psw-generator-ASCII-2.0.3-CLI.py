@@ -126,7 +126,7 @@ The type of the password to be generated (default= 5).\n
      5 - Mixed 12ab!@                                         \n
 """
 )
-	# 126: Escaped '%' because it was interfering with \n
+	# 125: Escaped '%' because it was interfering with \n
 	# "self._get_help_string(action) %" in the argparse module
 
 	# Show the program's version
