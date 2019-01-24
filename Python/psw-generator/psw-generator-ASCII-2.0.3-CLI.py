@@ -134,7 +134,7 @@ The type of the password to be generated (default= 5).\n
 		"-v",
 		dest="version",
 		action="store_const",
-		const="psw-generator ASCII Version v2.0.2(23012019-16.13)\n\
+		const="psw-generator ASCII Version v2.0.3(24012019-11.25)\n\
 by Erick César M. GitHub: https://github.com/zSucrilhos",
 		help="Version: Show the program's version and exit."
 		)
