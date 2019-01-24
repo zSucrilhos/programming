@@ -84,7 +84,6 @@ if __name__ == '__main__':
 		description = "psw-generator: A simple python program to generate passwords",
 		usage="%(prog)s [options]",
 		prefix_chars="-",
-		# 86: Format the text the way i want
 	)
 
 	########################
