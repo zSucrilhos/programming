@@ -81,7 +81,7 @@ def convert_into_ascii(dec):
 if __name__ == '__main__':
 	# Initialize the parser 
 	parser = argparse.ArgumentParser(
-		description = "psw-generator: A simple program to generate passwords",
+		description = "psw-generator: A simple python program to generate passwords",
 		usage="%(prog)s [options]",
 		prefix_chars="-",
 		# 86: Format the text the way i want
@@ -115,18 +115,19 @@ if __name__ == '__main__':
 		default=5,
 		choices=range(1,6),
 		dest="type",
+		# DON'T TOUCH THE WHITESPACES, PLEASE!
 		help="""
 Type:
-The type of the password to be generated (default= 5 - Mixed).\n
-Possible types are:\n
-\t1 - UPPERCASE ONLY\n
-\t2 - lowercase only\n
-\t3 - 1234567890 only\n
-\t4 - !@#$%%¨&* only\n
-\t5 - Mixed 12ab!@
+The type of the password to be generated (default= 5).\n
+  Possible types are:                                  \n
+     1 - UPPERCASE ONLY                                     \n
+     2 - lowercase only                                     \n
+     3 - 1234567890 only                                    \n
+     4 - !@#$%%¨&* only                                      \n
+     5 - Mixed 12ab!@                                         \n
 """
 )
-	# 124: Escaped '%' because it was interfering with \n
+	# 126: Escaped '%' because it was interfering with \n
 	# "self._get_help_string(action) %" in the argparse module
 
 	# Show the program's version
