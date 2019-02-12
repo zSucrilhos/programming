@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-	cout << static_cast<int>('A') << endl;;
+	cout << static_cast<int>('A]') << endl;;
 
 	return 0;
 }
