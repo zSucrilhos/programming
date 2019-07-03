@@ -1,3 +1,23 @@
+###############################################################################
+# MIT License #
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights to
+# use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+# of the Software, and to permit persons to whom the Software is furnished to do
+# so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+# WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
+# IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+###############################################################################
+
 # -*- coding: utf-8 -*-
 from random import randint, choice
 import argparse
@@ -71,8 +91,7 @@ def gen_psw(psw_length, psw_type):
 	else:
 		print("You must specify at least one argument")
 		exit(1)
-	return 0
-		
+
 def convert_into_ascii(dec):
 	""" Convert the given input into ASCII """
 	char = str(chr(dec))
@@ -126,7 +145,7 @@ The type of the password to be generated (default= 5).\n
      5 - Mixed 12ab!@                                         \n
 """
 )
-	# 125: Escaped '%' because it was interfering with \n
+	# 144: Escaped '%' because it was interfering with \n
 	# "self._get_help_string(action) %" in the argparse module
 
 	# Show the program's version
@@ -150,3 +169,4 @@ by Erick César M. GitHub: https://github.com/zSucrilhos",
 	if not arguments.version:
 		for i in range(0, arguments.repeat): # Repeat the function X times
 			gen_psw(psw_length=arguments.length, psw_type=arguments.type)
+
