@@ -16,7 +16,7 @@ def gen_psw(psw_length, psw_type):
 	"""
 	psw_list = [] # A place to store the passwords :)
 
-	if psw_type == 1: 
+	if psw_type == 1:
 		for n in range(0, psw_length):
 			n += 1
 			# We need some random numbers to convert to ASCII
@@ -27,7 +27,7 @@ def gen_psw(psw_length, psw_type):
 		print(finally_formated_psw)
 		# Cleaning the list after the storage to be able to store in it again \n
 		# later
-		psw_list = [] 
+		psw_list = []
 	elif psw_type == 2:
 		for n in range(0,psw_length):
 			n += 1
