@@ -47,7 +47,7 @@ def gen_psw(psw_length, psw_type):
 		print(finally_formated_psw)
 		# Cleaning the list after the storage to be able to store in it again \n
 		# later
-		psw_list = [] 
+		psw_list = []
 	elif psw_type == 2:
 		for n in range(0,psw_length):
 			n += 1
