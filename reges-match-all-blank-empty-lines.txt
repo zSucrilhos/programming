@@ -1,0 +1,3 @@
+https://gist.github.com/fomightez/706c1934a07c08b6c441
+
+^(?:[\t ]*(?:\r?\n|\r))+

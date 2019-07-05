@@ -1,0 +1,199 @@
+Alarm clock: despertador
+
+Bed: cama
+
+Bedside table: mesa de cabeceira
+
+Blanket: cobertor
+
+Bunk bed: beliche
+
+Chandelier: lustre
+
+Double bed: cama de casal
+
+Dressing table: penteadeira
+
+Duvet: edredom
+
+Hanger: cabide
+
+Headboard: cabeceira
+
+Lampshade: abajur
+
+Mattress: colchão
+
+Painting: quadro
+
+Pillow: travesseiro
+
+Pillowcase: fronha
+
+Sheet: lençol
+
+Shelf: estante
+
+Single bed: cama de solteiro
+
+Wallpaper: papel de parede
+
+Wardrobe: guarda roupas
+
+Broom: vassoura
+
+Bucket: balde
+
+Coffee machine: cafeteira
+
+Cup: xícara
+
+Cupboard: armário
+
+Dishwasher: lava louças
+
+Fork: garfo
+
+Fruit bowl: fruteira
+
+Glass: copo
+
+Iron: ferro de passar roupa
+
+Ironing board: tábua de passar roupa
+
+Kitchen sponge: bucha
+
+Knife: faca
+
+Microwave: microondas
+
+Mop: esfregão
+
+Mug: caneca
+
+Oven: forno
+
+Pan: frigideira
+
+Plate: prato
+
+Plughole: ralo
+
+Pot: panela
+
+Refrigerator: geladeira
+
+Sink: pia
+
+Spoon: colher
+
+Stool: banco
+
+Stove: fogão
+
+Squeegee: rodo
+
+Tablecloth: toalha de mesa
+
+Tap: torneira
+
+Vacuum cleaner: aspirador de pó
+
+Vase: vaso
+
+Washing machine: máquina de lavar roupas
+
+Armchair: poltrona
+
+Ashtray: cinzeiro
+
+Blinds: persianas
+
+Bookcase: estante
+
+Chair: cadeira
+
+Clock: relógio
+
+Coat stand: bengaleiro
+
+Computer: computador
+
+Couch: sofá
+
+Curtains: cortinas
+
+Cushion: almofada
+
+Desk: mesa (de escritório ou escrivaninha)
+
+Door knob: maçaneta
+
+Doormat: capacho
+
+Fireplace: lareira
+
+Firewood: lenha
+
+Lamp: lâmpada
+
+Radiator: radiador
+
+Radio: rádio
+
+Rug: tapete
+
+Sideboard: aparador
+
+Switch: interruptor
+
+Table: mesa
+
+Telephone: telefone
+
+Television: televisão
+
+Bathtub: banheira
+
+Cologne: perfume
+
+Comb: pente
+
+Conditioner: condicionador
+
+Cotton swabs: cotonete
+
+Dental floss: fio dental
+
+Deodorant: desodorante
+
+Diapers: fraldas
+
+Hair brush: escova de cabelo
+
+Mirror: espelho
+
+Moisturizer: creme hidratante
+
+Pad: absorvente
+
+Razor: lâmina de barbear
+
+Shampoo: xampu
+
+Shaving cream: creme de barbear
+
+Shower: chuveiro
+
+Soap: sabonete
+
+Sponge: esponja
+
+Toilet paper: papel higiênico
+
+Toothbrush: escova de dente
+
+Toothpaste: pasta de dente
+ 
+Towel: toalha
