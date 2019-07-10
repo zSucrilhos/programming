@@ -1,3 +1,4 @@
+'use strict'
 ((number, power) => {
     number = 1000, power = 2;
     let result = 0; array = [];
