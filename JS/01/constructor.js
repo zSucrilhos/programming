@@ -17,8 +17,8 @@ function Car(numberOfWheels, numberOfDoors, name, brand, horsePower){
 
     this.type = function(){
         console.log("An SUV...");
-    };
-};
+    }
+}
 document.getElementById
 
 var logan = new Car(4, 5, "Logan", "Renault", 160);
@@ -33,8 +33,8 @@ function Jar(material, size, color) {
 
     this.observation = function(){
         console.log("This jar is beautiful!");
-    };
-};
+    }
+}
 
 var juiceJar = new Jar("glass", "big", "transparent");
 console.log(juiceJar);
