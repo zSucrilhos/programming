@@ -24,7 +24,8 @@ document.getElementById
 var logan = new Car(4, 5, "Logan", "Renault", 160);
 console.log(logan);
 logan.type();
-
+erick erick
+eri
 
 function Jar(material, size, color) {
     this.material = material;
