@@ -165,7 +165,7 @@ by Erick César M. GitHub: https://github.com/zSucrilhos",
 	if arguments.version:
 		print(arguments.version)
 
-	# Continue the program if the user don't specify the "-v" argument
+	# Continue the program if the user doesn't specify the "-v" argument
 	if not arguments.version:
 		for i in range(0, arguments.repeat): # Repeat the function X times
 			gen_psw(psw_length=arguments.length, psw_type=arguments.type)
