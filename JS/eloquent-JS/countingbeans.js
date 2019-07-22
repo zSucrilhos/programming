@@ -8,6 +8,7 @@
 	}
 	(counter > 1) ? console.log("Found " + counter + " " + char + "'s") : console.log("Found " + counter + " " + char);
 	(counter === 0) ? console.log("There is no such character on the string") : null;
+	return counter;
 
 })("In other words, as we start the program, we start in the global execution context.\
 Some variables are declared within the global execution context. We call these global\
