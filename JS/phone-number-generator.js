@@ -8,3 +8,11 @@
 		return console.log(array);
 	}
 })(10, 11);
+
+function genTel(){
+	function interval(to){
+		return Math.floor(Math.random() * to + 1)
+	}
+	return ra
+}
+parseInt(10)
