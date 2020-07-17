@@ -30,7 +30,7 @@ def set_wallpaper(sleep_time, directory):
                         sleep(sleep_time) # Time the wallpaper can last
                     except NameError:
                         print('feh not found on your $PATH, trying with hsetroot')
-                        
+
     except KeyboardInterrupt: # If KeyboardInterrupt, the program should exit
         print("\nBye!") # It was good running on your machine
         sleep(0.8)
