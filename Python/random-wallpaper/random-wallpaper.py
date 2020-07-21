@@ -4,6 +4,7 @@
 from time import sleep
 import os
 import click
+import sys
 
 @click.command()
 @click.option('-d', '--directory', default='./', help='The dir where are your wallpapers. Default = local dir')
@@ -34,7 +35,7 @@ def set_wallpaper(sleep_time, directory):
     except KeyboardInterrupt: # If KeyboardInterrupt, the program should exit
         print("\nBye!") # It was good running on your machine
         sleep(0.8)
-        exit(0)
+        sys.exit(0)
 
 if __name__ == "__main__":
     set_wallpaper()
