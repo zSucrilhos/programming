@@ -1,7 +1,8 @@
 $lt-gray: #ddd;
 $background-dark: #512DA8;
-$background-dark: #9575CD;
+$background-light: #9575CD;
 $background-pale: #D1C4E9;
+$close-button: floralwhite;
 
 // Height variables
 $carousel-item-height: 300px;
@@ -11,7 +12,7 @@ $carousel-item-height: 300px;
     padding: $pad-up-dn $pad-left-right;
 }
 
-.row-header{
+.row-header {
     @include zero-margin(0px,0px);
 }
 
@@ -21,30 +22,40 @@ $carousel-item-height: 300px;
     min-height:400px;
 }
 
-.footer{
+.footer {
     background-color: $background-pale;
     @include zero-margin(20px, 0px);
 }
 
 .jumbotron {
     @include zero-margin(70px,30px);
-    background: $background-light ;
+    background-color: $background-light !important;
     color:floralwhite;
+
 }
 
-address{
+.modal-header {
+    background-color: $background-dark;
+
+    h4 {
+        color: $lt-gray;
+    }
+    
+}
+
+address {
     font-size:80%;
     margin:0px;
     color:#0f0f0f;
 }
 
-body{
+body {
     padding:50px 0px 0px 0px;
     z-index:0;
 }
 
 .navbar-dark {
-     background-color: $background-dark;
+    background-color: $background-dark;
 }
 
 .tab-content {
@@ -59,6 +70,7 @@ body{
 
     .carousel-item {
         height: $carousel-item-height;
+
         img {
             position: absolute;
             top: 0;
@@ -74,4 +86,3 @@ body{
     bottom: 0px;
     z-index: 1;
 }
-
